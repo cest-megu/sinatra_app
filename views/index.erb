@@ -8,9 +8,9 @@
 <body>
   <h1>メモアプリ</h1>
     <ul>
-      <% @texts.each do |text| %>
+      <% @memos.each do |memo| %>
       <li>
-        <%= text.title %>
+        <%= link_to memo.title, '/memos/:id' %>
       </li>
       <% end %>
     </ul>
