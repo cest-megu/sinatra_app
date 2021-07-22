@@ -7,12 +7,8 @@
 </head>
 <body>
   <h1>メモアプリ</h1>
-    <ul>
-      <% @memos.each do |memo| %>
-      <li>
-        <%= link_to memo.title, '/memos/:id' %>
-      </li>
-      <% end %>
-    </ul>
+  <h2 class="memo_list">
+    <%= @memos.map{|memo| "<a href=memos/#{memo[:id]}>#{memo[:title]}</a>"} %>
+  </h2>
 </body>
 </html>
