@@ -24,6 +24,7 @@ mkdir memos
 memosディレクトリがない場合、エラーが発生する可能性があります。
 
 ## アプリ、ブラウザの立ち上げ
+- ターミナルで
 
 ```
 bundle exec ruby main.rb
