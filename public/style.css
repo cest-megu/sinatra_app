@@ -1,0 +1,21 @@
+body {
+  font-family: fantasy;
+  font-weight: bolder;
+  text-align: center;
+}
+
+header {
+  background-color: #86ded7;
+  align-items: center;
+  text-align: center;
+}
+p {
+  font-size: 20px;
+  color: #79272c;
+}
+
+footer {
+  background-color: #86ded7;
+  align-items: center;
+  margin-bottom: 0;
+}
