@@ -7,7 +7,7 @@
 `git clone https://github.com/cest-megu/sinatra_app.git`
 を実行します。
 
-## アプリの立ち上げについて
+## gemファイルのインストール
 - `sinatra_app`のディレクトリに移動します。
 - アプリ立ち上げのため、必要なgemファイルをインストールするために、
 ```
@@ -15,7 +15,15 @@ bundle install --path vendor/bundle
 ```
 を実行します。
 
-- アプリを立ち上げます
+## memosディレクトリの作成
+- sinatra_app配下に`memos`フォルダがない場合は、
+```
+mkdir memos
+```
+を実行してmemosディレクトリを作成してください。
+memosディレクトリがない場合、エラーが発生する可能性があります。
+
+## アプリ、ブラウザの立ち上げ
 
 ```
 bundle exec ruby main.rb
