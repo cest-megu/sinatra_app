@@ -1,6 +1,6 @@
 <%# メモの詳細ページ %>
-<div class="title"><%= @memo[:title] %></div>
-<div class="content"><%= @memo[:content] %></div>
+<div class="title">タイトル：<%= @memo[:title] %></div>
+<div class="content">メモの内容：<%= @memo[:content] %></div>
 <div class="showpage_button">
   <button class="button" type="submit" onclick="location.href='/memos/<%= @memo[:id] %>/edit'" >変更する</button>
   <form action="/memos/<%= @memo[:id] %>" method="post">
