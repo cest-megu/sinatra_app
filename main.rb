@@ -66,3 +66,7 @@ delete '/memos/:id' do
   Memo.new.destroy(id: params[:id])
   redirect '/memos'
 end
+
+not_found do
+  erb :not_found
+end
