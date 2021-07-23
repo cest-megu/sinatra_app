@@ -1,14 +1,5 @@
 <%# メモの一覧（トップページ） %>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>メモアプリ</title>
-</head>
-<body>
-  <h1>メモアプリ</h1>
-  <h2 class="memo_list">
-    <%= @memos.map{|memo| "<a href=memos/#{memo[:id]}>#{memo[:title]}</a>"} %>
-  </h2>
-</body>
-</html>
+<button class="new_button" type="submit" onclick="location.href='/memos/new'">新規投稿</button>
+<div class="memo_list">
+  <%= @memos.map {|memo| "<a href=memos/#{memo[:id]}>#{memo[:title]}</a>"}.join("<br>") %>
+</div>

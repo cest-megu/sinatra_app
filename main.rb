@@ -15,20 +15,18 @@ class Memo
 
   def update(id:, title:, content:)
     new_contents = {id: id, title: title, content: content}
-    File.open("./memos/#{new_contents[:id]}.json", "w") do |file|
-      puts JSON.pretty_generate(file)
-    end
+    File.open("./memos/#{new_contents[:id]}.json", "w") {|file| file.puts JSON.pretty_generate(new_contents)}
   end
 
-  def destroy
+  def destroy(id:)
     File.delete("./memos/#{id}.json")
   end
-
 end
 
 # メモの一覧（トップページ）へのルーティング
 get '/memos' do
   memo_list = Dir.glob('./memos/*')
+  # binding.pry
   @memos = memo_list.map{|memo| JSON.parse(File.read(memo), symbolize_names: true)}
   erb :index
 end
@@ -45,7 +43,6 @@ post '/memos/new' do
 end
 
 # メモの詳細ページへのルーティング
-# binding.pry
 get '/memos/:id' do
   @memo = Memo.find(id: params[:id])
   erb :show
@@ -59,13 +56,13 @@ end
 
 # メモの更新
 patch '/memos/:id' do
-  @memo = Memo.update
+  @memo = Memo.new.update(id: params[:id], title: params[:title], content: params[:content])
   redirect '/memos'
   erb :edit
 end
 
 # メモの削除
 delete '/memos/:id' do
-  Memo.destroy
+  Memo.new.destroy(id: params[:id])
   redirect '/memos'
 end

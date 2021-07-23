@@ -1,17 +1,9 @@
 <%# メモの詳細ページ %>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>メモアプリ</title>
-</head>
-<body>
-  <h1>メモアプリ</h1>
-    <div class="title">
-      <%= @memo[:title] %>
-    </div>
-    <div class="content">
-      <%= @memo[:content] %>
-    </div>
-</body>
-</html>
+<div class="title"><%= @memo[:title] %></div>
+<div class="content"><%= @memo[:content] %></div>
+<div class="button">
+  <button class="change_button" type="submit" onclick="location.href='/memos/<%= @memo[:id] %>/edit'" >変更する</button>
+  <form action="/memos/<%= @memo[:id] %>" method="post">
+    <button class="delete_button" type="submit" name="_method" value="DELETE">削除する</button>
+  </form>
+</div>

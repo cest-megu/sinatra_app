@@ -1,23 +1,12 @@
 <%# メモの編集ページ %>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>メモアプリ</title>
-</head>
-<body>
-  <h1>メモアプリ</h1>
-  <form action="/memos/:id" method="patch">
-    <div>
-      タイトル:<input type="text" name="title">
-    </div>
-    <div>
-      内容:
-      <textarea name="content"></textarea>
-    </div>
-    <div>
-      <input type="submit" value="変更する">
-    </div>
-  </form>
-</body>
-</html>
+<form action="/memos/<%= @memo[:id] %>" method="post">
+  <div class="title">
+    タイトル: <input type="text" name="title" value="<%= @memo[:title] %>">
+  </div>
+  <div class="content">
+    内容: <textarea name="content"><%= @memo[:content] %></textarea>
+  </div>
+  <div>
+    <button class="delete_button" type="submit" name="_method" value="PATCH">変更する</button>
+  </div>
+</form>
