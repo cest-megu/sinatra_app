@@ -12,6 +12,11 @@ header, footer {
   align-items: center;
   text-align: center;
 }
+
+footer {
+  bottom: 0;
+}
+
 p {
   font-size: 30px;
   color: #79272c;
