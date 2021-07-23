@@ -4,7 +4,6 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'securerandom'
 require 'json'
-require 'pry'
 
 # About memo app class
 class Memo
